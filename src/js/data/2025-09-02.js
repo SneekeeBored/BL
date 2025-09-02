@@ -655,4 +655,11 @@ dataSet[dataSetVersion].characterData = [
     }
   }
 ];
+const characterImages = dataSet[dataSetVersion].characterData.map(c => c.img);
 
+characterImages.forEach((imgName, index) => {
+  const img = new Image();
+img.src = `assets/chars/${imgName}`; // make sure path matches your folder
+  img.onload = () => console.log(`Loaded: ${imgName} (index ${index})`);
+  img.onerror = () => console.error(`Failed to load: ${imgName} (index ${index})`);
+});

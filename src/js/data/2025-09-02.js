@@ -105,7 +105,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Bunny Iglesias",
     img: "bunny.jpg",
     opts: {
-      team: ["spu20","ngxi"]
+      team: ["ngxi"]
     }
   },
   {

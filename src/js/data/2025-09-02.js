@@ -13,8 +13,8 @@ dataSet[dataSetVersion].options = [
       { name: "Team X", key: "tx" },
       { name: "Team W", key: "tw" },
       { name: "Team V", key: "tv" },
-      { name: "Team White", key: "twhite" },
-      { name: "Team Red", key: "tred" },
+      { name: "Team twhite", key: "ttwhite" },
+      { name: "Team tred", key: "tred" },
       { name: "World Five", key: "wf" },
       { name: "Team A", key: "ta" },
       { name: "Team B", key: "tb" },
@@ -26,13 +26,14 @@ dataSet[dataSetVersion].options = [
       { name: "Manshine City", key: "mc" },
       { name: "Ubers", key: "ub" },
       { name: "PXG", key: "pxg" },
-      { name: "Japan U-20", key: "ju20" },
+      { name: "Japan U-20", key:  },
       { name: "Nigeria U-20", key: "ngu20" },
       { name: "New Gen XI", key: "ngxi" },
       { name: "Male", key: "m" },
       { name: "Female", key: "fm" },
       { name: "Background Charas", key: "bg" },
-      { name: "Irrevant Charas", key: "ic" }
+      { name: "Irrelvant Charas", key: "ic" }
+      { name: "Japan Reps", key: "jfu" }
     ]
   }
 ];
@@ -56,14 +57,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Akira Endoji",
     img: "akira.jpg",
     opts: {
-      team: ["white","tc","pxg","m"]
+      team: ["twhite","tc","pxg","m"]
     }
   },
   {
     name: "Anri Teieri",
     img: "anri.jpg",
     opts: {
-      team: ["jfu","fm"]
+      team: ["fm","jfu"]
     }
   },
   {
@@ -77,14 +78,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Meguru Bachira",
     img: "bachira.jpg",
     opts: {
-      team: ["tz","red","white","bleleven","ju20","mc"]
+      team: ["tz","tred","twhite","bleleven","mc"]
     }
   },
   {
     name: "Shoei Baro",
     img: "barou.jpg",
     opts: {
-      team: ["tx","red","white","bleleven","ju20","ub"]
+      team: ["tx","tred","twhite","bleleven","ub"]
     }
   },
   {
@@ -126,7 +127,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Hyoma Chigiri",
     img: "chigiri.jpg",
     opts: {
-      team: ["tz","red","mc","bleleven","ju20"]
+      team: ["tz","tred","mc","bleleven",]
     }
   },
   {
@@ -154,7 +155,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Miroku Darai",
     img: "darai.jpg",
     opts: {
-      team: ["ju20","barcha"]
+      team: ["barcha"]
     }
   },
   {
@@ -175,14 +176,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Gen Fukaku",
     img: "fukaku.jpg",
     opts: {
-      team: ["ju20","ub"]
+      team: ["ub"]
     }
   },
   {
     name: "Gin Gagamaru",
     img: "gagamaru.jpg",
     opts: {
-      team: ["tz","red","white","bleleven","ju20","bm"]
+      team: ["tz","tred","twhite","bleleven","bm"]
     }
   },
   {
@@ -203,14 +204,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Shizuka Haiji",
     img: "haiji.jpg",
     opts: {
-      team: ["tx","white","mc"]
+      team: ["tx","twhite","mc"]
     }
   },
   {
     name: "Haru Hayate",
     img: "haru.jpg",
     opts: {
-      team: ["ju20","barcha"]
+      team: ["barcha"]
     }
   },
   {
@@ -238,7 +239,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Gurimu Igarashi",
     img: "igarashi.jpg",
     opts: {
-      team: ["tz","white","bleleven","pxg"]
+      team: ["tz","twhite","bleleven","pxg"]
     }
   },
   {
@@ -252,7 +253,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Yoichi Isagi",
     img: "isagi.jpg",
     opts: {
-      team: ["tz","red","white","bleleven","ju20","u20wc"]
+      team: ["tz","tred","twhite","bleleven","u20wc"]
     }
   },
   {
@@ -266,7 +267,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Itsuki Wakatsuki",
     img: "itsuki.jpg",
     opts: {
-      team: ["ju20","barcha"]
+      team: ["barcha"]
     }
   },
   {
@@ -280,7 +281,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Junichi Wanima",
     img: "jwanima.jpg",
     opts: {
-      team: ["tw","red","mc"]
+      team: ["tw","tred","mc"]
     }
   },
   {
@@ -294,21 +295,21 @@ dataSet[dataSetVersion].characterData = [
     name: "Tabito Karasu",
     img: "karasu.jpg",
     opts: {
-      team: ["tz","red","white","bleleven","ju20","pxg"]
+      team: ["tz","tred","twhite","bleleven","pxg"]
     }
   },
   {
     name: "Kazuma Nio",
     img: "kazuma.jpg",
     opts: {
-      team: ["ju20","mc"]
+      team: ["mc"]
     }
   },
   {
     name: "Kento Cho",
     img: "kento.jpg",
     opts: {
-      team: ["ju20","barcha"]
+      team: ["barcha"]
     }
   },
   {
@@ -322,7 +323,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Jin Kiyora",
     img: "kiyora.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","pxg"]
+      team: ["tred","twhite","bleleven","pxg"]
     }
   },
   {
@@ -336,7 +337,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Rensuke Kunigami",
     img: "kunigami.jpg",
     opts: {
-      team: ["tz","ju20"]
+      team: ["tz",]
     }
   },
   {
@@ -350,7 +351,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Ranze Kurona",
     img: "kurona.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","pxg"]
+      team: ["tred","twhite","bleleven","pxg"]
     }
   },
   {
@@ -371,7 +372,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Kyohei Shiguma",
     img: "kyohei.jpg",
     opts: {
-      team: ["red","ub"]
+      team: ["tred","ub"]
     }
   },
   {
@@ -413,14 +414,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Seishiro Nagi",
     img: "nagi.jpg",
     opts: {
-      team: ["tv","white","bleleven","mc"]
+      team: ["tv","twhite","bleleven","mc"]
     }
   },
   {
     name: "Nijiro Nanase",
     img: "nanase.jpg",
     opts: {
-      team: ["white","pxg"]
+      team: ["twhite","pxg"]
     }
   },
   {
@@ -441,7 +442,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Teppei Neru",
     img: "neru.jpg",
     opts: {
-      team: ["red","ju20","bm"]
+      team: ["tred","bm"]
     }
   },
   {
@@ -455,14 +456,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Ikki Niko",
     img: "niko.jpg",
     opts: {
-      team: ["ty","red","bleleven","ju20","ub"]
+      team: ["ty","tred","bleleven","ub"]
     }
   },
   {
     name: "Hajime Nishioka",
     img: "nishioka.jpg",
     opts: {
-      team: ["mc","red"]
+      team: ["mc","tred"]
     }
   },
   {
@@ -490,7 +491,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Oliver Aiku",
     img: "oliver.jpg",
     opts: {
-      team: ["ju20","ub"]
+      team: ["ub"]
     }
   },
   {
@@ -504,7 +505,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Eita Otoya",
     img: "otoya.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","barcha"]
+      team: ["tred","twhite","bleleven","barcha"]
     }
   },
   {
@@ -518,7 +519,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Jingo Raichi",
     img: "raichi.jpg",
     opts: {
-      team: ["tz","red","bleleven","bm"]
+      team: ["tz","tred","bleleven","bm"]
     }
   },
   {
@@ -532,21 +533,21 @@ dataSet[dataSetVersion].characterData = [
     name: "Reiji Hiiragi",
     img: "reiji.jpg",
     opts: {
-      team: ["white","red","bleleven","ju20","pxg"]
+      team: ["twhite","tred","bleleven","pxg"]
     }
   },
   {
     name: "Reo Mikage",
     img: "reo.jpg",
     opts: {
-      team: ["tv","white","bleleven","ju20","mc"]
+      team: ["tv","twhite","bleleven","mc"]
     }
   },
   {
     name: "Rin Itoshi",
     img: "rin.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","pxg","ju20wc"]
+      team: ["tred","twhite","bleleven","pxg","ju20wc"]
     }
   },
   {
@@ -560,21 +561,21 @@ dataSet[dataSetVersion].characterData = [
     name: "Kairu Saramadara",
     img: "saramadara.jpg",
     opts: {
-      team: ["red","mc"]
+      team: ["tred","mc"]
     }
   },
   {
     name: "Shuto Sendo",
     img: "sendo.jpg",
     opts: {
-      team: ["ju20","ub","u20wc"]
+      team: ["ub","u20wc"]
     }
   },
   {
     name: "Ryusei Shido",
     img: "shidou.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","pxg","ju20wc"]
+      team: ["tred","twhite","bleleven","pxg","ju20wc"]
     }
   },
   {
@@ -588,35 +589,35 @@ dataSet[dataSetVersion].characterData = [
     name: "Taiga Tsunzaki",
     img: "taiga.jpg",
     opts: {
-      team: ["red","white","bleleven","mc"]
+      team: ["tred","twhite","bleleven","mc"]
     }
   },
   {
     name: "Shingen Tanaka",
     img: "tanaka.jpg",
     opts: {
-      team: ["red","white","bleleven","ub"]
+      team: ["tred","twhite","bleleven","ub"]
     }
   },
   {
     name: "Teru Kitsunezato",
     img: "teru.jpg",
     opts: {
-      team: ["ju20","barcha"]
+      team: ["barcha"]
     }
   },
   {
     name: "Tetsu Sokura",
     img: "tetsu.jpg",
     opts: {
-      team: ["red","white","mc","barcha"]
+      team: ["tred","twhite","mc","barcha"]
     }
   },
   {
     name: "Aoshi Tokimitsu",
     img: "tokimitsu.jpg",
     opts: {
-      team: ["red","bleleven","pxg"]
+      team: ["tred","bleleven","pxg"]
     }
   },
   {
@@ -630,28 +631,28 @@ dataSet[dataSetVersion].characterData = [
     name: "Kenyu Yukimiya",
     img: "yukimiya.jpg",
     opts: {
-      team: ["red","white","bleleven","ju20","pxg"]
+      team: ["tred","twhite","bleleven","pxg"]
     }
   },
   {
     name: "Yukio Ishikari",
     img: "yukio.jpg",
     opts: {
-      team: ["red","white","bleleven","ub","ju20wc"]
+      team: ["tred","twhite","bleleven","ub","ju20wc"]
     }
   },
   {
     name: "Haruhiko Yuzu",
     img: "yuzu.jpg",
     opts: {
-      team: ["red","mc"]
+      team: ["tred","mc"]
     }
   },
   {
     name: "Zantetsu Tsurugi",
     img: "zantetsu.jpg",
     opts: {
-      team: ["tv","white","bleleven","pxg","ju20wc"]
+      team: ["tv","twhite","bleleven","pxg","ju20wc"]
     }
   }
 ];

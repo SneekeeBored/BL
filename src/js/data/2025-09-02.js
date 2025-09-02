@@ -26,14 +26,12 @@ dataSet[dataSetVersion].options = [
       { name: "Manshine City", key: "mc" },
       { name: "Ubers", key: "ub" },
       { name: "PXG", key: "pxg" },
-      { name: "Japan U-20 (World Cup)", key: "u20wc" },
-      { name: "France U-20", key: "fru20" },
-      { name: "Germany U-20", key: "geru20" },
-      { name: "Italy U-20", key: "itu20" },
-      { name: "Spain U-20", key: "spu20" },
+      { name: "Japan U-20", key: "ju20" },
       { name: "Nigeria U-20", key: "ngu20" },
       { name: "New Gen XI", key: "ngxi" },
-      { name: "Others", key: "others" }
+      { name: "Male", key: "m" },
+      { name: "Female", key: "fm" },
+      { name: "Background Charas", key: "bg" }
     ]
   }
 ];
@@ -41,11 +39,14 @@ dataSet[dataSetVersion].options = [
 dataSet[dataSetVersion].characterData = [
 {
   name: "Michael Kaiser",
-  img: "Kaiser.png",
+  img: "kaiser.png",
   opts: {
-    team: [
-      "ngxi",
-      "geru20",
-      "bm"
-    ]
+    team: ["ngxi","bm","m"]
   },
+{
+  name: "Yoichi Isagi",
+  img: "isagi.png",
+  opts: {
+    team: ["tz","bleleven","ju20","m"]
+  }
+}

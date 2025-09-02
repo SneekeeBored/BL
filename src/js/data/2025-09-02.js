@@ -26,7 +26,6 @@ dataSet[dataSetVersion].options = [
       { name: "Manshine City", key: "mc" },
       { name: "Ubers", key: "ub" },
       { name: "PXG", key: "pxg" },
-      { name: "Japan U-20", key:  },
       { name: "Nigeria U-20", key: "ngu20" },
       { name: "New Gen XI", key: "ngxi" },
       { name: "Male", key: "m" },
@@ -120,7 +119,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Charles Chevalier",
     img: "charles.jpg",
     opts: {
-      team: ["fru20","pxg"]
+      team: ["pxg"]
     }
   },
   {
@@ -253,7 +252,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Yoichi Isagi",
     img: "isagi.jpg",
     opts: {
-      team: ["tz","tred","twhite","bleleven","u20wc"]
+      team: ["tz","tred","twhite","bleleven","u20"]
     }
   },
   {
@@ -288,7 +287,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Michael Kaiser",
     img: "kaiser.jpg",
     opts: {
-      team: ["ngxi","bm","m","geru20"]
+      team: ["ngxi","bm","m"]
     }
   },
   {
@@ -386,14 +385,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Julian Loki",
     img: "loki.jpg",
     opts: {
-      team: ["fru20","pxg"]
+      team: ["pxg"]
     }
   },
   {
     name: "Don Lorenzo",
     img: "lorenzo.jpg",
     opts: {
-      team: ["itu20","ngxi"]
+      team: ["ngxi"]
     }
   },
   {
@@ -547,14 +546,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Rin Itoshi",
     img: "rin.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","pxg","ju20wc"]
+      team: ["tred","twhite","bleleven","pxg"]
     }
   },
   {
     name: "Sae Itoshi",
     img: "sae.jpg",
     opts: {
-      team: ["ngxi","ju20wc"]
+      team: ["ngxi"]
     }
   },
   {
@@ -568,14 +567,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Shuto Sendo",
     img: "sendo.jpg",
     opts: {
-      team: ["ub","u20wc"]
+      team: ["ub","u20"]
     }
   },
   {
     name: "Ryusei Shido",
     img: "shidou.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","pxg","ju20wc"]
+      team: ["tred","twhite","bleleven","pxg"]
     }
   },
   {
@@ -638,7 +637,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Yukio Ishikari",
     img: "yukio.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","ub","ju20wc"]
+      team: ["tred","twhite","bleleven","ub"]
     }
   },
   {
@@ -652,7 +651,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Zantetsu Tsurugi",
     img: "zantetsu.jpg",
     opts: {
-      team: ["tv","twhite","bleleven","pxg","ju20wc"]
+      team: ["tv","twhite","bleleven","pxg"]
     }
   }
 ];

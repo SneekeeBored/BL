@@ -13,8 +13,8 @@ dataSet[dataSetVersion].options = [
       { name: "Team X", key: "tx" },
       { name: "Team W", key: "tw" },
       { name: "Team V", key: "tv" },
-      { name: "Team twhite", key: "ttwhite" },
-      { name: "Team tred", key: "tred" },
+      { name: "Team white", key: "twhite" },
+      { name: "Team red", key: "tred" },
       { name: "World Five", key: "wf" },
       { name: "Team A", key: "ta" },
       { name: "Team B", key: "tb" },
@@ -32,7 +32,7 @@ dataSet[dataSetVersion].options = [
       { name: "Male", key: "m" },
       { name: "Female", key: "fm" },
       { name: "Background Charas", key: "bg" },
-      { name: "Irrelvant Charas", key: "ic" }
+      { name: "Irrelvant Charas", key: "ic" },
       { name: "Japan Reps", key: "jfu" }
     ]
   }
@@ -127,7 +127,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Hyoma Chigiri",
     img: "chigiri.jpg",
     opts: {
-      team: ["tz","tred","mc","bleleven",]
+      team: ["tz","tred","mc","bleleven"]
     }
   },
   {
@@ -337,7 +337,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Rensuke Kunigami",
     img: "kunigami.jpg",
     opts: {
-      team: ["tz",]
+      team: ["tz"]
     }
   },
   {

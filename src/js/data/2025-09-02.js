@@ -31,7 +31,7 @@ dataSet[dataSetVersion].options = [
       { name: "New Gen XI", key: "ngxi" },
       { name: "Male", key: "m" },
       { name: "Female", key: "fm" },
-      { name: "Background Charas", key: "bg" }
+      { name: "Background Charas", key: "bg" },
       { name: "Irrevant Charas", key: "ic" }
     ]
   }

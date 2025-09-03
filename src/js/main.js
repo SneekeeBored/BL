@@ -1,5 +1,5 @@
 // Root folder for character images
-const imageRoot = "assets/chars/";
+const imageRoot = 'https://sneekeebored.github.io/BL/assets/chars/';
 /** @type {CharData} */
 let characterData       = [];   // Initial character data set used.
 /** @type {CharData} */

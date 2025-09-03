@@ -1,3 +1,5 @@
+// Root folder for character images
+const imageRoot = "src/assets/chars/";
 /** @type {CharData} */
 let characterData       = [];   // Initial character data set used.
 /** @type {CharData} */

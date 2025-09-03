@@ -761,26 +761,27 @@ function decodeQuery(queryString = window.location.search.slice(1)) {
 
 /** 
  * Preloads images in the filtered character data and converts to base64 representation.
-*/
+ */
 function preloadImages() {
   const totalLength = characterDataToSort.length;
   let imagesLoaded = 0;
 
-const loadImage = (src) => {
-  return new Promise((res, rej) => {
-    const img = new Image();
-    img.onload = () => {
-      progressBar(`Loaded Image: ${src}`, Math.floor(++imagesLoaded * 100 / totalLength));
-      res(img);
-    };
-    img.onerror = () => rej(new Error("Failed to load " + src));
-    img.src = src;
-  });
-};
+  const loadImage = (src) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        imagesLoaded++;
+        progressBar(`Loaded Image: ${src}`, Math.floor(imagesLoaded * 100 / totalLength));
+        resolve(img);
+      };
+      img.onerror = () => reject(new Error("Failed to load " + src));
+      img.src = src;
+    });
+  };
 
-return Promise.all(characterDataToSort.map(async (char, idx) => {
-  characterDataToSort[idx].img = await loadImage(imageRoot + char.img);
-}));
+  return Promise.all(characterDataToSort.map(async (char, idx) => {
+    characterDataToSort[idx].img = await loadImage(imageRoot + char.img);
+  }));
 }
 
 /**

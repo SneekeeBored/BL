@@ -289,8 +289,8 @@ function display() {
 
   progressBar(`Battle No. ${battleNo}`, percent);
 
-  document.querySelector('.left.sort.image').src = leftChar.img;
-  document.querySelector('.right.sort.image').src = rightChar.img;
+  document.querySelector('.left.sort.image').src = imageRoot + leftChar.img;
+  document.querySelector('.right.sort.image').src = imageRoot + rightChar.img;
 
   
 

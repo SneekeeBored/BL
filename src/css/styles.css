@@ -1,41 +1,35 @@
-/* --- 1. CORE PAGE SETTINGS --- */
+/* --- 1. OVERALL PAGE STRUCTURE --- */
 body {
     background: linear-gradient(180deg, #e0f2ff 0%, #ffffff 100%);
     background-attachment: fixed;
-    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     color: #334455;
     margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-top: 8px solid #ffffff; 
+    min-height: 100vh;
 }
 
 h1 {
-    text-align: center;
     margin: 15px 0;
     font-size: 1.6em;
     color: #335c81;
 }
 
-/* --- 2. MAIN LAYOUT (LOG & SORTER) --- */
+/* --- 2. THE MAIN LAYOUT --- */
 .main-layout {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 60px; /* Space between Log and Sorter */
+    gap: 40px;
     width: 95%;
-    max-width: 1100px;
-    margin: 10px auto;
+    max-width: 1000px;
 }
 
-/* Slim & Cute Update Log */
+/* Update Log: Fixed height, no scroll unless needed */
 .update-log {
-    width: 170px;
-    max-height: 280px;
-    overflow-y: auto;
+    width: 180px;
     background: white;
     border: 4px solid #bbddee;
     border-radius: 15px;
@@ -43,22 +37,16 @@ h1 {
     font-size: 0.75em;
     box-shadow: 4px 4px 0px #e0f2ff;
     flex-shrink: 0;
-    white-space: pre-wrap; /* Allows linebreaks from HTML */
-}
-
-.update-log h3 {
-    margin: 0 0 10px 0;
-    color: #bbddee;
-    text-transform: lowercase;
-    border-bottom: 2px solid #f0f8ff;
 }
 
 .update-log p {
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     line-height: 1.4;
+    border-bottom: 1px dashed #b3cde0;
+    padding-bottom: 8px;
 }
 
-/* --- 3. THE SORTER UNIT --- */
+/* --- 3. THE SORTER (THE BOX FIX) --- */
 .container {
     display: flex;
     flex-direction: column;
@@ -66,122 +54,107 @@ h1 {
     flex-grow: 1;
 }
 
+/* Forces: Image -> Name -> Buttons to stay grouped */
 .sorter {
     display: flex !important;
-    flex-direction: row !important;
-    align-items: center;
+    flex-direction: row !important; /* Left Image Side | Buttons | Right Image Side */
+    align-items: flex-start;
     justify-content: center;
     gap: 20px;
-    margin: 10px 0;
 }
 
-/* Character Images */
-.sorter img, .sorter .image {
+/* Vertical grouping for each character */
+.sorter > div:not(.middle) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Images */
+.sorter img {
     width: 160px !important;
     height: 160px !important;
     object-fit: cover;
     border: 3px solid #4a739b;
     border-radius: 15px;
     background: white;
-    cursor: pointer;
 }
 
-/* Middle Button Column */
-.middle.column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 140px;
-}
-
-.button, .sorting.button, .finished.button {
-    width: 100% !important;
-    padding: 10px !important;
-    background: #ffffff !important;
-    border: 2px solid #4a739b !important;
-    border-radius: 12px !important;
-    color: #4a739b !important;
-    font-weight: bold;
-    font-size: 0.85em;
-    cursor: pointer;
-    transition: 0.2s;
-    text-align: center;
-}
-
-.button:hover {
-    background: #f0f8ff !important;
-    transform: translateY(-1px);
-}
-
-/* Cute Name Bubbles */
+/* The Cute Name Boxes (Aligned with Image) */
 .sorter .text {
-    width: 160px !important;
+    width: 160px !important; /* Matches Image Width */
     height: 40px !important;
     background-color: #f0f7ff !important;
     border: 3px solid #4a739b !important;
-    border-radius: 15px !important;
+    border-radius: 20px !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
-    margin: 10px auto !important;
+    margin-top: 10px !important;
     font-weight: bold;
     color: #335c81;
     font-size: 0.85em;
 }
 
-/* --- 4. PROGRESS BAR & OPTIONS --- */
-.progressbar {
-    width: 100%;
-    max-width: 450px;
-    height: 15px;
-    border: 2px solid #b3cde0;
-    border-radius: 10px;
-    background: white;
-    overflow: hidden;
+/* Middle Buttons */
+.middle.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 20px;
+}
+
+.button, .sorting.button {
+    width: 130px !important;
+    padding: 10px !important;
+    background: white !important;
+    border: 2px solid #4a739b !important;
+    border-radius: 12px !important;
+    color: #4a739b !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- 4. PROGRESS BAR FIX --- */
+.progress {
+    width: 100% !important;
+    max-width: 500px;
     margin: 10px 0;
+}
+
+.progressbar {
+    width: 100% !important;
+    height: 25px !important; /* Made it bigger */
+    border: 2px solid #4a739b;
+    border-radius: 12px;
+    background: #eef7ff;
+    overflow: hidden;
 }
 
 .progressfill {
     height: 100%;
-    background-color: #b3cde0;
+    background-color: #4a739b;
     width: 0%;
 }
 
+/* --- 5. CHECKBOXES & BUNNIES --- */
 .options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px 15px;
     font-size: 0.7em;
-    margin: 15px 0;
-    width: 100%;
-    max-width: 500px;
+    margin: 20px 0;
 }
 
-.options div {
-    white-space: nowrap;
-}
-
-/* --- 5. THE BUNNIES & FOOTER --- */
 .info {
-    width: 100%;
+    margin-top: 20px;
     text-align: center;
-    margin-top: 10px;
-    padding-bottom: 20px;
 }
 
 .info pre {
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size: 3px; 
-    line-height: 7px;
-    letter-spacing: -0.5px;
-    color: #0077cc;
+    font-family: monospace;
+    font-size: 4px; /* Scaled for bunny visibility */
+    line-height: 8px;
+    color: #4a739b;
     display: inline-block;
-    white-space: pre !important;
-}
-
-/* Hidden elements to prevent ghost spacing */
-.image.selector, .time.taken, .results {
-    display: none;
-    height: 0;
-    margin: 0;
 }

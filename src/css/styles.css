@@ -557,3 +557,61 @@ h1 {
     width: 100%;
     margin: 20px 0;
 }
+/* --- COMPACT SORTER AESTHETICS --- */
+
+/* 1. Style the Name Boxes (Cuter, Smaller, & Rounded) */
+.sorter .text {
+    width: 150px !important;    /* Matches the image width */
+    height: 35px !important;     /* Much shorter height to save space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f7ff !important; /* Very light pastel blue */
+    border: 3px solid #4a739b !important; /* Pastel dark blue border */
+    border-radius: 15px !important;       /* Rounded corners */
+    margin: 5px auto !important;
+    font-weight: bold;
+    color: #335c81;
+    font-size: 0.85em;
+    padding: 2px 10px;
+}
+
+/* 2. Constrain the Character Image Boxes */
+.sorter img {
+    max-width: 150px !important; /* Keeps images from being huge */
+    height: auto !important;
+    border-radius: 12px;
+    border: 3px solid #b3cde0; /* Softer blue border for the image itself */
+    margin-bottom: 0 !important;
+}
+
+/* 3. Style the Sorting Buttons (Tie, Undo, etc.) */
+.sorting.button, .finished.button {
+    background-color: #ffffff !important;
+    border: 2px solid #4a739b !important;
+    border-radius: 10px !important;
+    color: #4a739b !important;
+    padding: 5px 15px !important;
+    font-size: 0.8em !important;
+    margin: 3px !important;
+    transition: 0.3s;
+}
+
+.sorting.button:hover {
+    background-color: #4a739b !important;
+    color: white !important;
+}
+
+/* 4. Center the Header and Layout Unit */
+h1 {
+    text-align: center;
+    margin: 10px 0 !important;
+}
+
+.main-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 60px; /* Adjust this to move the Sidebar further left */
+    width: 100%;
+}

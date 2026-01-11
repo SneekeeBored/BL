@@ -456,3 +456,51 @@ h1 {
     align-items: center;
     white-space: nowrap;
 }
+/* 1. Slim down the Update Log and move it "lefter" */
+.update-log {
+    width: 160px; /* Slimmer */
+    font-size: 0.75em;
+    padding: 10px;
+    margin-right: -20px; /* Pulls the sorter closer to the left */
+}
+
+/* 2. Tighten the Container and hide the "empty" space makers */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* These were likely causing the white space gap! */
+.image.selector, .time.taken, .results {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* 3. Shrink the checkboxes into a tighter grid */
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px 8px; /* Very tight spacing */
+    font-size: 0.7em;
+    margin: 5px 0; /* Reduced margin */
+}
+
+/* 4. Constrain the Sorter size */
+.sorter img {
+    max-height: 140px; /* Shorter images move everything up */
+    width: auto;
+}
+
+.sorter {
+    margin: 5px 0;
+}
+.main-layout {
+    display: flex;
+    justify-content: center; /* Centers the whole group */
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 10px;
+}

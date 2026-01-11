@@ -23,84 +23,94 @@
   <script src="src/js/seedrandom.min.js"></script>
   <script src="src/js/main.js"></script>
 </head>
-
 <body>
+
     <h1>Bluelock Character Sorter</h1>
 
+
+
     <div class="main-layout">
-        
-        <div class="update-log">
+<div class="update-log">
+
             <h3>update log:</h3>
+
             <p><strong>Jan 11, 2026:</strong> Fixed the double-list bug and moved the sidebar.</p>
+
             <p><strong>Sept 3, 2025:</strong> Project started and archived.</p>
+
         </div>
 
+
+
         <div class="container">
-            
+
             <div class="progress">
+
                 <span class="progressbattle"></span>
+
                 <div class="progressbar">
+
                     <div class="progressfill"><span class="progresstext"></span></div>
+
                 </div>
+
             </div>
-            
+
+
+
             <div class="sorter">
+
                 <img src="src/assets/defaultL.jpg" class="left sort image">
 
                 <div class="starting start button">Bluelock Character Sorter<br><br>Click to Start!</div>
+
                 <div class="starting load button">Load Autosave</div>
 
                 <div class="loading button"><div></div><span>Loading...</span></div>
 
                 <div class="sorting tie button">Tie</div>
+
                 <div class="sorting undo button">Undo</div>
+
                 <div class="sorting save button">Save Progress</div>
 
                 <div class="finished save button">Generate Result URL</div>
+
                 <div class="finished getimg button">Generate Image</div>
+
                 <div class="finished list button">Generate Text List</div>
 
                 <img src="src/assets/defaultR.jpg" class="right sort image">
 
                 <div class="left sort text"><p></p></div>
+
                 <div class="right sort text"><p></p></div>
+
             </div>
+
+
 
             <div class="options">
-                <div class="large option"><input type="checkbox" class="clearsave"> <label>Clear Save Data</label></div>
-                <hr>
-                <div><input type="checkbox" checked> <label>Team Z</label></div>
-                <div><input type="checkbox" checked> <label>Team Y</label></div>
-                <div><input type="checkbox" checked> <label>Team X</label></div>
-                <div><input type="checkbox" checked> <label>Team W</label></div>
-                <div><input type="checkbox" checked> <label>Team V</label></div>
-                <div><input type="checkbox" checked> <label>Team white</label></div>
-                <div><input type="checkbox" checked> <label>Team red</label></div>
-                <div><input type="checkbox" checked> <label>World Five</label></div>
-                <div><input type="checkbox" checked> <label>Team A</label></div>
-                <div><input type="checkbox" checked> <label>Team B</label></div>
-                <div><input type="checkbox" checked> <label>Team C</label></div>
-                <div><input type="checkbox" checked> <label>Blue Lock Eleven</label></div>
-                <div><input type="checkbox" checked> <label>Japan U-20</label></div>
-                <div><input type="checkbox" checked> <label>Bastard München</label></div>
-                <div><input type="checkbox" checked> <label>FC Barcha</label></div>
-                <div><input type="checkbox" checked> <label>Manshine City</label></div>
-                <div><input type="checkbox" checked> <label>Ubers</label></div>
-                <div><input type="checkbox" checked> <label>PXG</label></div>
-                <div><input type="checkbox" checked> <label>Nigeria U-20</label></div>
-                <div><input type="checkbox" checked> <label>New Gen XI</label></div>
-                <div><input type="checkbox" checked> <label>Male</label></div>
-                <div><input type="checkbox" checked> <label>Female</label></div>
-                <div><input type="checkbox" checked> <label>Background Charas</label></div>
-                <div><input type="checkbox" checked> <label>Irrelvant Charas</label></div>
-                <div><input type="checkbox" checked> <label>Japan Reps</label></div>
-            </div>
 
-            <div class="image selector">Display Images on Result: </div>
-            <div class="time taken"></div>
-            <div class="results"></div>
-        </div> </div> <div class="info">
-        <pre style="font-family: 'Courier New', Courier, monospace; font-size: 4px; line-height: 8px; letter-spacing: 0px; color: #0077cc; text-align: left; white-space: pre !important; display: inline-block; margin: 20px auto; overflow-wrap: normal;">
+                <div class="large option"><input type="checkbox" class="clearsave"> <label>Clear Save Data</label></div>
+
+                <hr>
+
+                <div><input type="checkbox" checked> <label>Team Z</label></div>
+
+                <div><input type="checkbox" checked> <label>Team Y</label></div>
+
+                </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="info">
+
+        <pre style="font-family: 'Courier New', Courier, monospace; font-size: 5px; line-height: 10px; letter-spacing: 0px; color: #0077cc; text-align: left; white-space: pre !important; display: inline-block; margin: 20px auto;">
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣷⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣿⣿⠟⠁
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠀⠉⢿⡁⠀

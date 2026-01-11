@@ -570,8 +570,8 @@ h1 {
 
 /* 1. Style the Name Boxes (Cuter, Smaller, & Rounded) */
 .sorter .text {
-    width: 150px !important;    /* Matches the image width */
-    height: 35px !important;     /* Much shorter height to save space */
+    width: 100px !important;    /* Matches the image width */
+    height: 20px !important;     /* Much shorter height to save space */
     display: flex;
     align-items: center;
     justify-content: center;

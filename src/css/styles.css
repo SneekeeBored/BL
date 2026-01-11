@@ -557,3 +557,12 @@ h1 {
     width: 100%;
     margin: 20px 0;
 }
+
+/* 2. Constrain the Character Image Boxes */
+.sorter img {
+    max-width: 150px !important; /* Keeps images from being huge */
+    height: auto !important;
+    border-radius: 12px;
+    border: 3px solid #b3cde0; /* Softer blue border for the image itself */
+    margin-bottom: 0 !important;
+}

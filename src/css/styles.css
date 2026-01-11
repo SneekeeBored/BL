@@ -385,3 +385,27 @@ h1 {
     margin: 0 auto;         /* This centers the whole block on the page */
     width: fit-content;    /* This prevents it from stretching to the left edge */
 }
+/* 1. Make the options list take up less height */
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Puts checkboxes in 3 columns */
+    gap: 5px 15px;                         /* Tightens the vertical gap */
+    font-size: 0.75em;                     /* Smaller text for the list */
+    margin-top: 10px;
+}
+
+/* 2. Reduce the massive gaps between sections */
+h1 {
+    margin: 10px 0 !important;             /* Squishes the title closer to the top */
+    font-size: 1.5em;
+}
+
+.main-layout {
+    margin: 10px auto !important;          /* Moves everything up */
+}
+
+/* 3. Tighten the Sorter height */
+.sorter img {
+    max-height: 180px;                     /* Limits image height so bunnies move up */
+    width: auto;
+}

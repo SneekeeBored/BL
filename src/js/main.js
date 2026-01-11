@@ -483,7 +483,7 @@ function result(imageNum = 3) {
   const imgRes = (char, num) => {
     const charName = reduceTextWidth(char.name, 'Arial 12px', 160);
     const charTooltip = char.name !== charName ? char.name : '';
-    return `<div class="result image"><div class="left"><span>${num}</span></div><div class="right"><img src="${char.img}"><div><span title="${charTooltip}">${charName}</span></div></div></div>`;
+return `<div class="result image"><div class="left"><span>${num}</span></div><div class="right"><img src="${imageRoot + char.img}"><div><span title="${charTooltip}">${charName}</span></div></div></div>`;
   }
   const res = (char, num) => {
     const charName = reduceTextWidth(char.name, 'Arial 12px', 160);

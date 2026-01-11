@@ -1,4 +1,4 @@
-/* --- 1. THE FOUNDATION --- */
+/* --- 1. CORE RESET --- */
 body {
     background: linear-gradient(180deg, #e0f2ff 0%, #ffffff 100%);
     background-attachment: fixed;
@@ -10,144 +10,135 @@ body {
     align-items: center;
 }
 
-h1 { margin: 15px 0; color: #335c81; text-align: center; }
-
-/* --- 2. MAIN LAYOUT (SIDEBAR + SORTER) --- */
+/* --- 2. LAYOUT: SIDEBAR + CONTENT --- */
 .main-layout {
     display: flex;
+    flex-direction: row; /* Sidebar on left, game on right */
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
-    width: 98%;
-    margin-top: 10px;
+    gap: 30px;
+    width: 95%;
+    margin-top: 20px;
 }
 
 .update-log {
-    width: 180px;
+    width: 200px;
     background: white;
     border: 4px solid #bbddee;
     border-radius: 15px;
     padding: 15px;
-    font-size: 0.75em;
+    font-size: 0.8em;
     flex-shrink: 0;
+    /* Removed fixed height to kill the scroll wheel */
 }
 
-/* --- 3. THE SORTER (FIXING THE HORIZONTAL MESS) --- */
+/* --- 3. THE BATTLE AREA (VERTICAL STACK) --- */
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* FORCES everything to stay centered and vertical */
     align-items: center;
+    max-width: 600px;
 }
 
-/* Forces the layout to be: [Image] [Buttons] [Image] */
-.sorter {
-    display: flex !important;
-    flex-direction: row !important; 
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: fit-content;
-}
-
-/* This keeps the image and name box stacked VERTICALLY */
-.sorter > div:not(.middle) {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 160px;
-}
-
-.sorter img {
-    width: 160px !important;
-    height: 160px !important;
-    object-fit: cover;
-    border: 3px solid #4a739b;
-    border-radius: 15px;
-}
-
-/* The Name Boxes (Fixed under images) */
-.sorter .text {
-    width: 100% !important;
-    height: 40px !important;
-    background-color: #f0f7ff !important;
-    border: 3px solid #4a739b !important;
-    border-radius: 15px !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10px !important;
-    font-weight: bold;
-    color: #335c81;
-}
-
-/* --- 4. THE BUTTON MENU (CENTERED) --- */
-.middle.column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 140px; /* Limits width so they don't push images away */
-}
-
-/* Hide the "extra" utility buttons during the battle so it's not a mess */
-.starting.button, .loading.button, .finished.button {
-    display: none; 
-}
-
-.sorting.button {
-    width: 100% !important;
-    padding: 10px !important;
-    background: white !important;
-    border: 2px solid #4a739b !important;
-    border-radius: 12px !important;
-    color: #4a739b !important;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* --- 5. PROGRESS BAR FIX (REMOVES "NUMBER PICKER") --- */
+/* THE BATTLE PROGRESS BAR */
 .progress {
-    width: 500px !important;
-    margin: 10px 0;
-    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .progressbar {
     width: 100%;
-    height: 25px;
+    height: 30px; /* Nice and big */
     border: 2px solid #4a739b;
-    border-radius: 12px;
+    border-radius: 15px;
     background: #eef7ff;
-    position: relative;
-}
-
-.progresstext {
-    position: absolute;
-    width: 100%;
-    line-height: 25px;
-    font-size: 0.8em;
-    font-weight: bold;
-    z-index: 2;
 }
 
 .progressfill {
     height: 100%;
-    background-color: #b3cde0;
+    background-color: #4a739b;
     width: 0%;
 }
 
-/* --- 6. CHECKBOXES & BUNNIES --- */
+/* THE SORTER (Image - Buttons - Image) */
+.sorter {
+    display: flex;
+    flex-direction: row; /* This is ONLY for the battle row */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Keeps Image and Name Box perfectly aligned */
+.sorter > div:not(.middle) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+}
+
+.sorter img {
+    width: 180px !important;
+    height: 180px !important;
+    object-fit: cover;
+    border: 3px solid #4a739b;
+    border-radius: 15px;
+    background: white;
+}
+
+/* The Name Boxes underneath images */
+.sorter .text {
+    width: 100% !important;
+    min-height: 45px;
+    margin-top: 10px;
+    background: #f0f7ff;
+    border: 3px solid #4a739b;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #335c81;
+    padding: 5px;
+    text-align: center;
+}
+
+/* CENTER BUTTONS */
+.middle.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 25px;
+}
+
+.button, .sorting.button {
+    width: 120px !important;
+    padding: 10px;
+    background: white;
+    border: 2px solid #4a739b;
+    border-radius: 12px;
+    font-weight: bold;
+    color: #4a739b;
+    cursor: pointer;
+}
+
+/* --- 4. FOOTER & BUNNIES --- */
 .options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px 15px;
-    font-size: 0.7em;
+    gap: 10px;
+    font-size: 0.75em;
     margin-top: 20px;
 }
 
-.info { margin-top: 30px; text-align: center; }
+.info {
+    margin-top: 40px;
+    text-align: center;
+}
+
 .info pre {
-    font-size: 4px;
-    line-height: 8px;
+    font-size: 5px; /* Tiny font for bunny art */
+    line-height: 7px;
     color: #4a739b;
-    display: inline-block;
 }

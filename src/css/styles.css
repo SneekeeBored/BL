@@ -409,3 +409,50 @@ h1 {
     max-height: 180px;                     /* Limits image height so bunnies move up */
     width: auto;
 }
+/* Centers the Header */
+h1 {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 1.8em;
+}
+
+/* Centers the whole layout block */
+.main-layout {
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 20px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+/* Slimmer Sidebar */
+.update-log {
+    width: 180px; /* Reduced from 260px */
+    font-size: 0.8em;
+    padding: 15px;
+    flex-shrink: 0;
+}
+
+/* Shrink Character Images to save vertical space */
+.sorter img {
+    max-width: 150px; /* Smaller images = bunnies move up */
+    height: auto;
+}
+
+/* 3-Column Grid for Checkboxes (The real space saver!) */
+.options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 4px 10px;
+    font-size: 0.7em; /* Small but readable */
+    margin-top: 10px;
+    max-width: 500px; /* Keeps it tight */
+}
+
+/* Tighten the spacing for the checkbox containers */
+.options div {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}

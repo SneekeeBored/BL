@@ -1,725 +1,174 @@
+/* --- GLOBAL STYLES --- */
 body {
-  /* Soft Light Blue Gradient */
   background: linear-gradient(180deg, #e0f2ff 0%, #ffffff 100%);
   background-attachment: fixed;
-  
-  /* Modern clean font */
   font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #334455;
   margin: 0;
   padding: 0;
-
-  /* White border at the very top */
-  border-top: 8px solid #ffffff; 
-}
-
-.container {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  margin-top: 1em;
-}
-
-.progress {
-  margin: 1em auto;
-  width: 500px;
-  display: none;
-}
-
-.progressbar {
-  position: relative;
-  width: 492px;
-  border: 1px solid black;
-  padding: 3px;
-  margin: 2px 0px;
-}
-
-.progresstext {
-  position: absolute;
-  width: 492px;
-  margin: 3px 0px;
-  text-align: center;
-  font-size: 0.7em;
-}
-
-.progressfill {
-  height: 20px;
-  background-color: lightgreen;
-  width: 0%;
-}
-
-.sorter {
-  margin: 0px auto;
-  display: grid;
-  grid-template-columns: 120px 1fr 120px;
-  grid-gap: 5px;
-  width: 420px;
-}
-
-.button {
-  border: 1px solid #bbddee;
-  background: #ffffff;
-  border-radius: 8px;
-  text-align: center;
-  padding: 10%;
-  grid-column: 2 / 3;
-  cursor: pointer;
-  color: #0077cc;
-  transition: 0.2s; /* This makes the color change "fade" in smoothly */
-}
-
-.button:hover {
-  background: #f0f8ff; /* Lightest blue glow */
-  border-color: #0077cc; /* Darker blue border */
-}
-
-.starting.start.button {
-  grid-row: span 6;
-}
-
-.starting.load.button {
-  grid-row: span 3;
-  display: none;
-}
-
-.sorting.button, .finished.button {
-  grid-row: span 2;
-  display: none;
-}
-
-.loading.button {
-  grid-row: span 6;
-  display: none;
-}
-
-.loading.button > div {
-  width: 25px;
-  height: 25px;
-  margin: 50px auto;
-  background-color: #333;
-
-  border-radius: 100%;  
-  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-  animation: sk-scaleout 1.0s infinite ease-in-out;
-}
-
-/* Animation taken from: http://tobiasahlin.com/spinkit/ */
-
-.loading.button > span {
-  margin: auto auto 20%;
-  font-size: 0.7em;
-}
-
-@-webkit-keyframes sk-scaleout {
-  0% { -webkit-transform: scale(0) }
-  100% {
-    -webkit-transform: scale(1.0);
-    opacity: 0;
-  }
-}
-
-@keyframes sk-scaleout {
-  0% { 
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  } 100% {
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
-    opacity: 0;
-  }
-}
-
-.sorter > .image {
-  width: 120px;
-  height: 180px;
-  margin: auto;
-  grid-row: 1 / 7;
-  cursor: pointer;
-}
-
-.sorter > .text {
-  width: 120px;
-  height: 60px;
-  display: none;
-}
-
-.sorter > .text > p {
-  margin: 0.5em 5px 0px;
-  width: calc(100%-10px);
-  text-align: center;
-  font-size: 0.8em;
-  line-height: 1.5em;
-}
-
-.sorter > .left {
-  grid-column: 1 / 2;
-  border: 1px solid #000000;
-}
-
-.sorter > .right {
-  grid-column: 3 / 4;
-  border: 1px solid #000000;
-}
-
-.options {
-  margin: 1em auto;
-  display: grid;
-  text-align: left;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  width: 450px;
-}
-
-.options > div {
-  font-size: 0.5625em;
-}
-
-label {
-  cursor: pointer;
-}
-
-label:hover {
-  color: #990000;
-}
-
-.options > .large.option, .options > hr {
-  grid-column: span 3;
-  text-align: center;
-  width: 100%;
-}
-
-.image.selector {
-  margin-top: 0.5em;
-  width: 500px;
-  display: none;
-  text-align: center;
-  font-size: 0.75em;
-}
-
-.time.taken {
-  margin-top: 0.5em;
-  width: 500px;
-  display: none;
-  text-align: center;
-  font-size: 0.75em;
-}
-
-.results {
-  font-size: 0.75em;
-  display: flex;
-  align-content: flex-start;
-  width: 80%;
-  margin: 2em auto;
-}
-
-@media all and (min-width: 600px) {
-  .results {
-    flex-flow: column wrap;
-    max-height: calc(5 * (175px + 2px) + 1 * (15px + 2px));
-    /* 2px for borders */
-  }
-}
-
-@media all and (max-width: 600px) {
-  .results {
-    flex-flow: column nowrap;
-  }
-}
-
-.result {
-  height: 15px;
-  margin-bottom: -1px;
-  display: grid;
-  width: 211px;
-  grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #000;
-  margin-right: 5px;
-}
-
-.result.image {
-  height: 175px;
-}
-
-.result.image img {
-  height: 160px;
-}
-
-.result.spacer {
-  height: 1px;
-  background-color: #000;
-}
-
-.result.head {
-  background-color: #000;
-  color: #FFF;
-}
-
-.result > .left {
-  width: 35px;
-  padding: 1px 3px 1px 0.5em;
-  grid-column: 1 / 2;
-  text-align: right;
-}
-
-.result.image .left {
-  position: relative;
-}
-
-.result.image > .left span {
-  position: absolute;
-  top: 50%;
-  right: 3px;
-  margin-top: -0.375em;
-}
-
-.result > .right {
-  width: 160px;
-  padding: 1px 0em 1px 0em;
-  grid-column: 2 / 3;
-  border-left: 1px solid #000;
-  text-align: center;
-}
-
-.info {
-  margin: 2em auto 3em;
-  display: block;
-  text-align: center;
-  font-size: 0.6875em;
-  width: 80%;
-  line-height: 1.2em;
-}
-
-a {
-  color: #990000;
-  font-weight: bold;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-a:hover {
-  color: #FF6600;
-}
-
-a:visited {
-  color: #6600FF;
-}
-/* Sidebar and Sorter Layout */
-.main-layout {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    margin: 20px auto;
-}
-
-.update-log {
-    width: 250px;
-    border: 3px solid #bbddee; /* Thick blue border from your drawing */
-    border-radius: 12px;
-    padding: 20px;
-    background: white;
-    min-height: 300px;
-    text-align: left;
-}
-
-/* Ensure the bunnies don't explode */
-.footer-art {
-    width: 100%;
-    text-align: center;
-    margin-top: 50px;
-    clear: both;
-}
-/* --- FINAL BLUE LOCK POLISH --- */
-
-.main-layout {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    margin: 40px auto;
-}
-
-.update-log {
-    width: 260px;
-    background: #ffffff;
-    border: 4px solid #bbddee; /* Thick blue border from your drawing */
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left;
-    box-shadow: 4px 4px 0px #e0f2ff;
-    flex-shrink: 0;
-}
-
-.update-log h3 {
-    margin-top: 0;
-    color: #bbddee;
-    font-size: 1.2em;
-    font-family: sans-serif;
-    text-transform: lowercase; /* Makes it "update log:" like your drawing */
-    border-bottom: 2px solid #f0f8ff;
-    padding-bottom: 5px;
-}
-
-/* THE BUNNY INFLATOR */
-.info pre {
-    font-family: 'Courier New', Courier, monospace !important;
-    font-size: 5px; 
-    line-height: 9px; /* This acts like an air pump to un-flatten the art */
-    letter-spacing: 0px;
-    color: #0077cc;
-    display: inline-block;
-    text-align: left;
-    white-space: pre !important;
-}
-h1 {
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
-}
-.main-layout {
-    display: flex;
-    justify-content: center; /* This centers the sidebar and sorter together */
-    align-items: flex-start;
-    gap: 40px;
-    margin: 0 auto;         /* This centers the whole block on the page */
-    width: fit-content;    /* This prevents it from stretching to the left edge */
-}
-/* 1. Make the options list take up less height */
-.options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Puts checkboxes in 3 columns */
-    gap: 5px 15px;                         /* Tightens the vertical gap */
-    font-size: 0.75em;                     /* Smaller text for the list */
-    margin-top: 10px;
-}
-
-/* 2. Reduce the massive gaps between sections */
-h1 {
-    margin: 10px 0 !important;             /* Squishes the title closer to the top */
-    font-size: 1.5em;
-}
-
-.main-layout {
-    margin: 10px auto !important;          /* Moves everything up */
-}
-
-/* 3. Tighten the Sorter height */
-.sorter img {
-    max-height: 180px;                     /* Limits image height so bunnies move up */
-    width: auto;
-}
-/* Centers the Header */
-h1 {
-    text-align: center;
-    margin: 10px 0;
-    font-size: 1.8em;
-}
-
-/* Centers the whole layout block */
-.main-layout {
-    display: flex;
-    justify-content: center; 
-    align-items: flex-start;
-    gap: 20px;
-    margin: 0 auto;
-    width: fit-content;
-}
-
-/* Slimmer Sidebar */
-.update-log {
-    width: 180px; /* Reduced from 260px */
-    font-size: 0.8em;
-    padding: 15px;
-    flex-shrink: 0;
-}
-
-/* Shrink Character Images to save vertical space */
-.sorter img {
-    max-width: 150px; /* Smaller images = bunnies move up */
-    height: auto;
-}
-
-/* 3-Column Grid for Checkboxes (The real space saver!) */
-.options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 4px 10px;
-    font-size: 0.7em; /* Small but readable */
-    margin-top: 10px;
-    max-width: 500px; /* Keeps it tight */
-}
-
-/* Tighten the spacing for the checkbox containers */
-.options div {
-    display: flex;
-    align-items: center;
-    white-space: nowrap;
-}
-/* 1. Slim down the Update Log and move it "lefter" */
-.update-log {
-    width: 160px; /* Slimmer */
-    font-size: 0.75em;
-    padding: 10px;
-    margin-right: -20px; /* Pulls the sorter closer to the left */
-}
-
-/* 2. Tighten the Container and hide the "empty" space makers */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* These were likely causing the white space gap! */
-.image.selector, .time.taken, .results {
-    height: 0;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-/* 3. Shrink the checkboxes into a tighter grid */
-.options {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px 8px; /* Very tight spacing */
-    font-size: 0.7em;
-    margin: 5px 0; /* Reduced margin */
-}
-
-/* 4. Constrain the Sorter size */
-.sorter img {
-    max-height: 140px; /* Shorter images move everything up */
-    width: auto;
-}
-
-.sorter {
-    margin: 5px 0;
-}
-.main-layout {
-    display: flex;
-    justify-content: center; /* Centers the whole group */
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 10px;
-}
-/* Pull the bunny section UP into the white space */
-.info {
-    margin-top: -50px !important; /* Negative margin pulls it up */
-    position: relative;
-    z-index: 10;
-    text-align: center;
-}
-
-/* Ensure the container doesn't force extra height */
-.container {
-    height: auto !important;
-    min-height: 0 !important;
-    padding-bottom: 0 !important;
-}
-
-/* Shrink the gap between the checkbox list and the bottom of its box */
-.options {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-}
-/* 1. Force everything to the exact center of the screen */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0;
-}
-
-/* 2. Center the layout and create the gap you wanted */
-.main-layout {
-    display: flex;
-    justify-content: center; /* Centers the sidebar + sorter together */
-    align-items: flex-start;
-    gap: 65px;              /* Moves the update log further away from the sorter */
-    width: 100%;
-    margin: 20px 0;
-}
-
-/* 3. Make the Sidebar slimmer and 'lefter' */
-.update-log {
-    width: 150px;           /* Slims the box */
-    font-size: 0.75em;
-    padding: 10px;
-    margin-top: 20px;       /* Aligns it nicely with the top of the images */
-}
-
-/* 4. Ensure the Title doesn't lean left */
-h1 {
-    text-align: center;
-    width: 100%;
-    margin: 20px 0;
-}
-
-/* 2. Constrain the Character Image Boxes */
-.sorter img {
-    max-width: 150px !important; /* Keeps images from being huge */
-    height: auto !important;
-    border-radius: 12px;
-    border: 3px solid #b3cde0; /* Softer blue border for the image itself */
-    margin-bottom: 0 !important;
-}
-/* --- COMPACT SORTER AESTHETICS --- */
-
-/* 1. Style the Name Boxes (Cuter, Smaller, & Rounded) */
-.sorter .text {
-    width: 100px !important;    /* Matches the image width */
-    height: 20px !important;     /* Much shorter height to save space */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f0f7ff !important; /* Very light pastel blue */
-    border: 3px solid #4a739b !important; /* Pastel dark blue border */
-    border-radius: 15px !important;       /* Rounded corners */
-    margin: 5px auto !important;
-    font-weight: bold;
-    color: #335c81;
-    font-size: 0.85em;
-    padding: 2px 10px;
-}
-/* --- 1 & 2: COMPACT CHARACTER CARDS --- */
-
-/* Adjust the sorter grid to fit images exactly */
-.sorter {
-  margin: 0px auto;
-  display: grid;
-  grid-template-columns: 130px 140px 130px; /* Adjusted for better fit */
-  grid-gap: 5px;
-  width: fit-content;
-  transform: scale(0.9); /* Shrinks the sorter slightly to show ASCII */
-  transform-origin: top center;
-}
-
-/* Character Box Styling */
-.sorter > .left, .sorter > .right {
+  border-top: 8px solid #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  border: 2px solid #4a739b; /* Thinner, cleaner border */
-  border-radius: 12px;
-  overflow: hidden; /* Keeps the name inside the box boundaries */
-  background: white;
-  height: fit-content; /* Box only as tall as the content */
-}
-
-/* Character Images */
-.sorter img {
-  width: 100% !important;
-  height: auto !important;
-  display: block;
-}
-
-/* Character Names inside the box */
-.sorter .text {
-  width: 100% !important;
-  height: auto !important;
-  display: flex !important;
-  background-color: rgba(240, 247, 255, 0.9); 
-  margin: 0 !important; /* Removes the gap between image and name */
-  padding: 5px 0;
-  border-top: 1px solid #4a739b; /* Separator line inside the box */
-}
-
-.sorter > .text > p {
-  margin: 0;
-  font-size: 0.75em;
-  font-weight: bold;
   width: 100%;
 }
 
-/* --- 3: READABLE UPDATE LOG --- */
+h1 {
+  text-align: center;
+  margin: 15px 0;
+  font-size: 1.8em;
+}
+
+/* --- MAIN LAYOUT & SIDEBAR --- */
+.main-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 10px auto;
+  width: fit-content;
+}
 
 .update-log {
   width: 180px;
   background: #ffffff;
-  border: 3px solid #bbddee;
-  border-radius: 12px;
+  border: 4px solid #bbddee;
+  border-radius: 15px;
   padding: 15px;
-  font-size: 0.8em;
-  line-height: 1.6; /* Increases spacing between lines */
-  color: #556677;
+  font-size: 0.75em;
+  line-height: 1.6;
+  text-align: left;
   box-shadow: 4px 4px 0px #e0f2ff;
+  flex-shrink: 0;
 }
 
-/* Dotted line breaks between log entries */
-.update-log p {
+.update-log h3 {
+  margin-top: 0;
+  color: #bbddee;
+  font-size: 1.2em;
+  text-transform: lowercase;
+  border-bottom: 2px solid #f0f8ff;
+  padding-bottom: 5px;
+}
+
+/* Dotted line breaks for log entries */
+.update-log p, .update-log div {
   margin: 8px 0;
   padding-bottom: 8px;
   border-bottom: 1px dotted #bbddee;
 }
 
-/* Remove the line from the very last entry */
 .update-log p:last-child {
   border-bottom: none;
 }
 
-/* --- OVERALL SCALING --- */
-
-/* Shrinks the options section to help the ASCII art fit */
-.options {
-  transform: scale(0.9);
-  transform-origin: top center;
-  margin-top: -10px; /* Pulls it up because of the scaling */
-}
-/* Update the sorter grid to give the cards their own space */
+/* --- COMPACT CHARACTER CARDS --- */
 .sorter {
-  margin: 0px auto;
   display: grid;
-  grid-template-columns: 150px 1fr 150px; /* Adjusted width */
+  grid-template-columns: 150px 140px 150px; 
   grid-gap: 10px;
-  width: 450px;
-  align-items: start; /* Prevents cards from stretching vertically */
+  align-items: start;
+  transform: scale(0.95); /* Subtle shrink to lift footer art */
+  transform-origin: top center;
 }
 
-/* Treat .left and .right as the actual "Box" */
 .sorter > .left, 
 .sorter > .right {
   display: flex;
   flex-direction: column;
-  border: 3px solid #4a739b; /* Your preferred blue */
+  border: 3px solid #4a739b; /* Solid wrap-around border */
   border-radius: 12px;
-  overflow: hidden;
+  overflow: hidden; 
   background: white;
-  height: auto; /* This is the key to wrapping! */
-  grid-row: 1 / 7; /* Keeps them aligned with the buttons */
-}
-
-/* Reset the .image and .text containers inside the boxes */
-.sorter > .image {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  cursor: pointer;
+  height: auto; 
+  grid-row: 1 / 7;
 }
 
 .sorter img {
   width: 100%;
   height: auto;
-  display: block; /* Removes tiny gap at bottom of image */
+  display: block; /* Removes bottom whitespace gap */
 }
 
-/* Move the name inside the card at the bottom */
+/* Character Names inside the box */
 .sorter > .text {
-  width: 100%;
+  width: 100% !important;
   height: auto !important;
-  display: block !important; /* Force visibility */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
   background-color: #f0f7ff;
-  border-top: 2px solid #4a739b; /* Separates name from image */
-  padding: 5px 0;
+  border-top: 2px solid #4a739b;
+  padding: 8px 0;
+  margin: 0 !important;
 }
 
 .sorter > .text > p {
   margin: 0;
   font-size: 0.85em;
   font-weight: bold;
-  text-align: center;
   color: #335c81;
+}
+
+/* --- BUTTONS --- */
+.button {
+  border: 1px solid #bbddee;
+  background: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  grid-column: 2 / 3;
+  cursor: pointer;
+  color: #0077cc;
+  transition: 0.2s;
+  font-size: 0.9em;
+}
+
+.button:hover {
+  background: #f0f8ff;
+  border-color: #0077cc;
+}
+
+.sorting.button { grid-row: span 2; display: none; }
+.starting.start.button { grid-row: span 6; }
+
+/* --- OPTIONS SECTION --- */
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px 12px;
+  font-size: 0.7em;
+  margin: 10px 0;
+  max-width: 500px;
+  transform: scale(0.95);
+}
+
+.options div {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* --- FOOTER & ASCII ART --- */
+.info {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.info pre {
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 5px; 
+  line-height: 9px;
+  color: #0077cc;
+  display: inline-block;
+  white-space: pre !important;
+}
+
+/* Hide unused containers to save space */
+.image.selector, .time.taken, .results {
+  display: none;
 }

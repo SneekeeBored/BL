@@ -58,11 +58,20 @@ body {
 }
 
 .button {
-  border: 1px solid black;
+  border: 1px solid #bbddee;
+  background: #ffffff;
+  border-radius: 8px;
   text-align: center;
   padding: 10%;
   grid-column: 2 / 3;
   cursor: pointer;
+  color: #0077cc;
+  transition: 0.2s; /* This makes the color change "fade" in smoothly */
+}
+
+.button:hover {
+  background: #f0f8ff; /* Lightest blue glow */
+  border-color: #0077cc; /* Darker blue border */
 }
 
 .starting.start.button {

@@ -372,3 +372,11 @@ a:visited {
     text-align: left;
     white-space: pre !important;
 }
+.main-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    width: fit-content; /* This pulls the sidebar and sorter together so they center as one unit */
+}

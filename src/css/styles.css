@@ -1,4 +1,4 @@
-/* --- 1. OVERALL PAGE STRUCTURE --- */
+/* --- 1. THE FOUNDATION --- */
 body {
     background: linear-gradient(180deg, #e0f2ff 0%, #ffffff 100%);
     background-attachment: fixed;
@@ -8,26 +8,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
 }
 
-h1 {
-    margin: 15px 0;
-    font-size: 1.6em;
-    color: #335c81;
-}
+h1 { margin: 15px 0; color: #335c81; text-align: center; }
 
-/* --- 2. THE MAIN LAYOUT --- */
+/* --- 2. MAIN LAYOUT (SIDEBAR + SORTER) --- */
 .main-layout {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 40px;
-    width: 95%;
-    max-width: 1000px;
+    width: 98%;
+    margin-top: 10px;
 }
 
-/* Update Log: Fixed height, no scroll unless needed */
 .update-log {
     width: 180px;
     background: white;
@@ -35,77 +29,72 @@ h1 {
     border-radius: 15px;
     padding: 15px;
     font-size: 0.75em;
-    box-shadow: 4px 4px 0px #e0f2ff;
     flex-shrink: 0;
 }
 
-.update-log p {
-    margin-bottom: 15px;
-    line-height: 1.4;
-    border-bottom: 1px dashed #b3cde0;
-    padding-bottom: 8px;
-}
-
-/* --- 3. THE SORTER (THE BOX FIX) --- */
+/* --- 3. THE SORTER (FIXING THE HORIZONTAL MESS) --- */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 1;
 }
 
-/* Forces: Image -> Name -> Buttons to stay grouped */
+/* Forces the layout to be: [Image] [Buttons] [Image] */
 .sorter {
     display: flex !important;
-    flex-direction: row !important; /* Left Image Side | Buttons | Right Image Side */
-    align-items: flex-start;
+    flex-direction: row !important; 
+    align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    width: fit-content;
 }
 
-/* Vertical grouping for each character */
+/* This keeps the image and name box stacked VERTICALLY */
 .sorter > div:not(.middle) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 160px;
 }
 
-/* Images */
 .sorter img {
     width: 160px !important;
     height: 160px !important;
     object-fit: cover;
     border: 3px solid #4a739b;
     border-radius: 15px;
-    background: white;
 }
 
-/* The Cute Name Boxes (Aligned with Image) */
+/* The Name Boxes (Fixed under images) */
 .sorter .text {
-    width: 160px !important; /* Matches Image Width */
+    width: 100% !important;
     height: 40px !important;
     background-color: #f0f7ff !important;
     border: 3px solid #4a739b !important;
-    border-radius: 20px !important;
+    border-radius: 15px !important;
     display: flex !important;
     align-items: center;
     justify-content: center;
     margin-top: 10px !important;
     font-weight: bold;
     color: #335c81;
-    font-size: 0.85em;
 }
 
-/* Middle Buttons */
+/* --- 4. THE BUTTON MENU (CENTERED) --- */
 .middle.column {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-top: 20px;
+    width: 140px; /* Limits width so they don't push images away */
 }
 
-.button, .sorting.button {
-    width: 130px !important;
+/* Hide the "extra" utility buttons during the battle so it's not a mess */
+.starting.button, .loading.button, .finished.button {
+    display: none; 
+}
+
+.sorting.button {
+    width: 100% !important;
     padding: 10px !important;
     background: white !important;
     border: 2px solid #4a739b !important;
@@ -115,45 +104,49 @@ h1 {
     cursor: pointer;
 }
 
-/* --- 4. PROGRESS BAR FIX --- */
+/* --- 5. PROGRESS BAR FIX (REMOVES "NUMBER PICKER") --- */
 .progress {
-    width: 100% !important;
-    max-width: 500px;
+    width: 500px !important;
     margin: 10px 0;
+    text-align: center;
 }
 
 .progressbar {
-    width: 100% !important;
-    height: 25px !important; /* Made it bigger */
+    width: 100%;
+    height: 25px;
     border: 2px solid #4a739b;
     border-radius: 12px;
     background: #eef7ff;
-    overflow: hidden;
+    position: relative;
+}
+
+.progresstext {
+    position: absolute;
+    width: 100%;
+    line-height: 25px;
+    font-size: 0.8em;
+    font-weight: bold;
+    z-index: 2;
 }
 
 .progressfill {
     height: 100%;
-    background-color: #4a739b;
+    background-color: #b3cde0;
     width: 0%;
 }
 
-/* --- 5. CHECKBOXES & BUNNIES --- */
+/* --- 6. CHECKBOXES & BUNNIES --- */
 .options {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px 15px;
     font-size: 0.7em;
-    margin: 20px 0;
-}
-
-.info {
     margin-top: 20px;
-    text-align: center;
 }
 
+.info { margin-top: 30px; text-align: center; }
 .info pre {
-    font-family: monospace;
-    font-size: 4px; /* Scaled for bunny visibility */
+    font-size: 4px;
     line-height: 8px;
     color: #4a739b;
     display: inline-block;

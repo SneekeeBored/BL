@@ -538,7 +538,7 @@ body {
     display: flex;
     justify-content: center; /* Centers the sidebar + sorter together */
     align-items: flex-start;
-    gap: 80px;              /* Moves the update log further away from the sorter */
+    gap: 65px;              /* Moves the update log further away from the sorter */
     width: 100%;
     margin: 20px 0;
 }

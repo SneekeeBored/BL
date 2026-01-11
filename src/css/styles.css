@@ -662,3 +662,51 @@ body.sorting .sorter .text {
     margin: 4px auto !important;
     border-radius: 10px !important;
 }
+/* 1. Restore the Middle Button Menu */
+.middle.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 15px;
+}
+
+/* 2. Bring back and Fix the Name Boxes */
+.sorter .text {
+    display: flex !important; /* Ensure they are visible */
+    width: 160px !important;
+    height: 45px !important;    /* Decent height for readability */
+    background-color: #f0f7ff !important;
+    border: 3px solid #4a739b !important; /* Darker pastel blue */
+    border-radius: 15px !important;
+    margin: 10px auto !important; /* Adds space so they don't merge */
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #335c81;
+    font-size: 0.9em;
+}
+
+/* 3. Fix the Image Box Merging */
+.sorter img {
+    max-width: 160px !important;
+    height: auto !important;
+    border: 3px solid #4a739b !important;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 4. Update Log Readability (Linebreaks) */
+.update-log {
+    white-space: pre-wrap; /* Respects line breaks in your text */
+    line-height: 1.6;
+    font-size: 0.8em;
+    padding: 15px;
+}
+
+/* 5. Keep the Sidebar at a distance */
+.main-layout {
+    gap: 60px;
+    justify-content: center;
+}

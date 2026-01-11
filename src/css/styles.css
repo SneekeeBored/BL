@@ -615,3 +615,50 @@ h1 {
     gap: 60px; /* Adjust this to move the Sidebar further left */
     width: 100%;
 }
+/* --- FINAL REFINEMENTS --- */
+
+/* 1. Fix the Cluttered Log with linebreaks */
+.update-log p {
+    display: block;
+    margin-bottom: 15px !important; /* Adds clear space between each log entry */
+    line-height: 1.4;
+    border-bottom: 1px dashed #b3cde0; /* Optional: adds a cute separator line */
+    padding-bottom: 5px;
+}
+
+/* 2. Hide name boxes until the game actually starts */
+.sorter .text {
+    display: none !important; /* Hidden by default */
+}
+
+/* 3. Show them ONLY when sorting is active */
+body.sorting .sorter .text {
+    display: flex !important; /* Only appears when you click start */
+    width: 160px !important;
+    height: 35px !important;
+    background-color: #f0f7ff !important;
+    border: 3px solid #4a739b !important;
+    border-radius: 20px !important;
+    margin: 5px auto !important;
+    font-size: 0.85em;
+    color: #335c81;
+    font-weight: bold;
+}
+
+/* 4. Fix the "White Space" by constraining the character boxes */
+.sorter .left.sort.image, 
+.sorter .right.sort.image {
+    width: 160px !important;
+    height: 160px !important; /* Forces a perfect square or consistent height */
+    object-fit: cover;        /* Prevents stretching */
+    border-radius: 15px !important;
+    border: 3px solid #4a739b !important;
+    background-color: white;
+}
+
+/* 5. Center and tighten the middle button column */
+.sorter .sorting.button {
+    width: 120px !important;
+    margin: 4px auto !important;
+    border-radius: 10px !important;
+}

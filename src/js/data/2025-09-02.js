@@ -348,7 +348,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Wataru Kuon",
     img: "kuon.jpg",
     opts: {
-      team: ["tz","bm","tred"]
+      team: ["tz","tred"]
     }
   },
   {

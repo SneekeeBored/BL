@@ -243,7 +243,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Gurimu Igarashi",
     img: "igarashi.jpg",
     opts: {
-      team: ["tz","twhite","bleleven","pxg"]
+      team: ["tz","twhite","pxg"]
     }
   },
   {
@@ -327,7 +327,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Jin Kiyora",
     img: "kiyora.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","pxg"]
+      team: ["tred","twhite","pxg"]
     }
   },
   {
@@ -355,7 +355,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Ranze Kurona",
     img: "kurona.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","pxg"]
+      team: ["tred","twhite","pxg"]
     }
   },
   {
@@ -523,7 +523,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Jingo Raichi",
     img: "raichi.jpg",
     opts: {
-      team: ["tz","tred","bleleven","bm"]
+      team: ["tz","tred","bm"]
     }
   },
   {
@@ -537,7 +537,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Reiji Hiiragi",
     img: "reiji.jpg",
     opts: {
-      team: ["twhite","tred","bleleven"]
+      team: ["twhite","tred"]
     }
   },
   {
@@ -579,7 +579,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Ryusei Shido",
     img: "shidou.jpg",
     opts: {
-      team: ["tred","twhite","bleleven","pxg"]
+      team: ["tred","twhite","u20","pxg"]
     }
   },
   {
@@ -593,14 +593,14 @@ dataSet[dataSetVersion].characterData = [
     name: "Taiga Tsunzaki",
     img: "taiga.jpg",
     opts: {
-      team: ["tred","twhite","bleleven"]
+      team: ["tred","twhite"]
     }
   },
   {
     name: "Shingen Tanaka",
     img: "tanaka.jpg",
     opts: {
-      team: ["tred","twhite","bleleven"]
+      team: ["tred","twhite"]
     }
   },
   {
@@ -621,7 +621,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Aoshi Tokimitsu",
     img: "tokimitsu.jpg",
     opts: {
-      team: ["tred","bleleven","pxg"]
+      team: ["tred","pxg"]
     }
   },
   {
@@ -642,7 +642,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Yukio Ishikari",
     img: "yukio.jpg",
     opts: {
-      team: ["tred","twhite","bleleven"]
+      team: ["tred","twhite"]
     }
   },
   {
@@ -656,7 +656,7 @@ dataSet[dataSetVersion].characterData = [
     name: "Zantetsu Tsurugi",
     img: "zantetsu.jpg",
     opts: {
-      team: ["tv","twhite","bleleven","pxg"]
+      team: ["tv","twhite","pxg"]
     }
   }
 ];
